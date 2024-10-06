@@ -5,12 +5,16 @@ This project aims to create an AI-driven system that interprets and translates s
 ### Features
 
 Real-time gesture recognition: The system captures hand gestures via a webcam, processes them, and predicts the corresponding sign language alphabet or number.
+
 Indian Sign Language Support: The model supports recognition for the ISL alphabet (A-Z) and numbers (1-9).
+
 User-Friendly Interface: The system displays both the captured image and the predicted sign on the screen.
 
 ### Technologies Used
 TensorFlow: For model loading and prediction.
+
 OpenCV: For capturing webcam images and displaying the feed.
+
 NumPy: For image processing.
 
 ### Key Challenges:

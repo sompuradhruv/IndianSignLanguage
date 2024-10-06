@@ -1,0 +1,63 @@
+import cv2
+import numpy as np
+import tensorflow as tf
+
+# Load the trained model
+model = tf.keras.models.load_model('sign_language_interpreter_model.h5')
+
+# Load class labels
+class_labels_reverse = {
+    1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7",
+    8: "8", 9: "9", 10: "A", 11: "B", 12: "C", 13: "D",
+    14: "E", 15: "F", 16: "G", 17: "H", 18: "I", 19: "J",
+    20: "K", 21: "L", 22: "M", 23: "N", 24: "O", 25: "P",
+    26: "Q", 27: "R", 28: "S", 29: "T", 30: "U", 31: "V",
+    32: "W", 33: "X", 34: "Y", 35: "Z"
+}
+
+def capture_image_and_predict():
+    # Initialize webcam
+    cap = cv2.VideoCapture(0)
+
+    print("Press 'c' to capture an image...")
+
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            print("Failed to grab frame")
+            break
+
+        # Display the frame
+        cv2.imshow('Webcam', frame)
+
+        # Capture image when 'c' key is pressed
+        if cv2.waitKey(1) & 0xFF == ord('c'):
+            cv2.imwrite('captured_image.jpg', frame)  # Save the captured image
+            print("Image captured! Predicting...")
+
+            # Process the captured image for prediction
+            hand_roi = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)  # Convert to RGB
+            hand_roi = cv2.resize(hand_roi, (64, 64))  # Resize to model input size
+            hand_roi = hand_roi / 255.0  # Normalize pixel values
+            hand_roi = np.expand_dims(hand_roi, axis=0)  # Add batch dimension
+
+            # Predict the sign
+            prediction = model.predict(hand_roi)
+            class_index = np.argmax(prediction)
+
+            # Map class index back to the sign label
+            predicted_sign = class_labels_reverse.get(class_index + 1, "Unknown")  # Adjust for 1-based index
+
+            print(f"Predicted Sign: {predicted_sign}")
+
+            # Optionally, display the captured image with the predicted sign
+            cv2.putText(frame, f"Sign: {predicted_sign}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+            cv2.imshow('Predicted Sign', frame)
+            cv2.waitKey(3000)  # Display the result for 3 seconds
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
+
+# Call the function to start capturing
+capture_image_and_predict()

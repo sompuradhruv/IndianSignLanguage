@@ -55,8 +55,8 @@ Then run the code.py file to build the model.
 Then run the try.py file to capture the image and make predictions.
 
 
-###YouTube Video:
+### YouTube Video:
 ![Screenshot (334)](https://github.com/user-attachments/assets/84500c4f-0913-4a7e-86bb-74fe42a2ab1c)
-](https://www.youtube.com/watch?v=X3XGqkYtL4o&ab_channel=DhruvSompura)
+(https://www.youtube.com/watch?v=X3XGqkYtL4o&ab_channel=DhruvSompura)
 
 

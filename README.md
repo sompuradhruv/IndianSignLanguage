@@ -56,7 +56,7 @@ Then run the try.py file to capture the image and make predictions.
 
 
 ###YouTube Video:
-[![Demo Video](![![Screenshot (334)](https://github.com/user-attachments/assets/722482c4-8600-4b35-be06-32dfd0866dae)
-]()
-)]([https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE](https://www.youtube.com/watch?v=X3XGqkYtL4o&ab_channel=DhruvSompura))
+[![Watch the video](![Screenshot (334)](https://github.com/user-attachments/assets/84500c4f-0913-4a7e-86bb-74fe42a2ab1c)
+)](https://www.youtube.com/watch?v=X3XGqkYtL4o&ab_channel=DhruvSompura)
+
 

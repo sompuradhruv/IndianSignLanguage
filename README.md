@@ -35,7 +35,12 @@ Achieving real-time gesture recognition requires optimization of the model. If t
 The model uses a dataset of hand gestures corresponding to Indian Sign Language (ISL) letters (A-Z) and numbers (1-9). Each image is processed and trained to predict the correct sign based on the gesture. This dataset can either be:
 
 A pre-trained dataset provided as a .h5 file.
+
 A custom dataset captured via the webcam.
+
+the sample dataset is given below:
+
+https://drive.google.com/file/d/1BSDMLN4h8LpCjpofPs3a0zJbK2YqvhLM/view?usp=sharing
 
 ### Future Work
 Improve model accuracy with a larger and more diverse dataset.

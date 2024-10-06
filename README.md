@@ -43,6 +43,8 @@ Implement additional features such as continuous recognition and multi-sign inte
 Expand the application to include other languages or dialects.
 
 ### How to Run
-First download all the files in the repo
-Then run the code.py file to build the model
-Then run the try.py file to capture the image and make predictions
+First download all the files in the repo.
+
+Then run the code.py file to build the model.
+
+Then run the try.py file to capture the image and make predictions.
